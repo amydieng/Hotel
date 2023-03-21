@@ -64,7 +64,7 @@ class MainMenuPage extends StatelessWidget {
         child: Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('images/faire.jpg'),
+                image: AssetImage('images/bon.jpg'),
                 fit: BoxFit.cover,
               ),
             ),

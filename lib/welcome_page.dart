@@ -1,77 +1,86 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hotel/delayed_animation.dart';
+import 'package:hotel/login_page.dart';
 import 'package:hotel/social_page.dart';
-// ignore: unused_import
-import 'package:hotel/main.dart';
+import 'package:flutter/material.dart';
 
-// ignore: use_key_in_widget_constructors
-class WelcomePage extends StatelessWidget {
+import 'main.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Le Saloum',
+      home: GetStartedPage(),
+    );
+  }
+}
+
+class GetStartedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 237, 236, 242),
-      body: SingleChildScrollView(
-        child: Container(
-          margin: const EdgeInsets.symmetric(
-            vertical: 60,
-            horizontal: 30,
-          ),
-          child: Column(
-            children: [
-              DelayedAnimation(
-                delay: 1500,
-                child: SizedBox(
-                  height: 500,
-                  child: Image.asset('images/grand.jpg'),
+      appBar: AppBar(
+        title: Text('Get Started'),
+        backgroundColor: Color.fromARGB(120, 170, 66, 139),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'images/hot.jpg',
+              fit: BoxFit.cover,
+              width: 400, // largeur de l'image
+              height: 400, // hauteur de l'image
+            ),
+            Text(
+              'Welcome to  "Le Saloum"!',
+              style: TextStyle(
+                fontSize: 24.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 20.0),
+            ElevatedButton(
+              onPressed: () {
+                // Naviguer vers la page suivante
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
+              },
+              child: Text("Get Start"),
+              style: ElevatedButton.styleFrom(
+                primary: Color.fromARGB(255, 47, 35, 49),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0),
                 ),
               ),
-              DelayedAnimation(
-                delay: 2500,
-                child: SizedBox(
-                  height: double.infinity,
-                  child: Image.asset('images/hotels-luxe-dubai.jpg'),
-                ),
-              ),
-              DelayedAnimation(
-                delay: 3500,
-                child: Container(
-                  height: 400,
-                  margin: const EdgeInsets.only(
-                    top: 30,
-                    bottom: 20,
-                  ),
-                  child: Text(
-                    "Venir. Relaxer. Profitez d’une bouchée",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.poppins(
-                      color: Color.fromARGB(255, 1, 118, 185),
-                      fontSize: 18,
-                    ),
-                  ),
-                ),
-              ),
-              DelayedAnimation(
-                delay: 3500,
-                child: Container(
-                  width: 400,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: Color(0xFF576dff),
-                    ),
-                    child: Text('GET STARTED'),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => SocialPage(),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ),
-            ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class NextPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Page suivante'),
+      ),
+      body: Center(
+        child: Text(
+          'Ceci est la page suivante',
+          style: TextStyle(
+            fontSize: 24.0,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),

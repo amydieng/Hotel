@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hotel/delayed_animation.dart';
+import 'package:hotel/service/liste_client.dart';
+import 'package:hotel/gestion_client.dart';
 
 import 'main.dart';
 import 'accueil.dart';
@@ -28,7 +30,7 @@ class GestionClient extends StatelessWidget {
                   );
                   // Code pour gérer l'hôtel
                 },
-                child: Text('LISTES Des Clients Sortants'),
+                child: Text('LISTES Des Clients '),
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(200, 60),
                   textStyle: TextStyle(fontSize: 20),
@@ -41,7 +43,7 @@ class GestionClient extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => GestionClient()),
+                    MaterialPageRoute(builder: (context) => Client()),
                   );
                   // Code pour gérer les chambres
                 },

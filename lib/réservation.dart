@@ -40,11 +40,11 @@ class GestionReservation extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => MyApp()),
+                    MaterialPageRoute(builder: (context) => ListeReservation()),
                   );
                   // Code pour gérer les chambres
                 },
-                child: Text('Annuler Une Réservation'),
+                child: Text('Ajouter Une Réservation'),
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(200, 60),
                   textStyle: TextStyle(fontSize: 20),
@@ -57,11 +57,11 @@ class GestionReservation extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => MyApp()),
+                    MaterialPageRoute(builder: (context) => AjoutReservation()),
                   );
                   // Code pour gérer les réservations
                 },
-                child: Text('Ajouter Une Réservation'),
+                child: Text('Annuler Une Réservation'),
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(200, 60),
                   textStyle: TextStyle(fontSize: 20),
@@ -88,3 +88,7 @@ class GestionReservation extends StatelessWidget {
     );
   }
 }
+
+ListeReservation() {}
+
+AjoutReservation() {}

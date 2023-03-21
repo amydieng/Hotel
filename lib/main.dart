@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Royal App',
+        title: 'Le Saloum App',
         debugShowCheckedModeBanner: false,
-        home: LoginPage());
+        home: GetStartedPage());
   }
 }

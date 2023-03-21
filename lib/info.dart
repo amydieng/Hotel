@@ -5,6 +5,8 @@ import 'package:hotel/delayed_animation.dart';
 import 'package:hotel/gestion_hotel.dart';
 import 'main.dart';
 
+void main() => runApp(MyApp());
+
 class Infos {
   final String nom;
   final int nombreNiveaux;
@@ -31,7 +33,7 @@ class ClasseTypeE {
 
 void main() {
   final hotel = Infos(
-    nom: 'Radisson',
+    nom: 'Le Saloum',
     nombreNiveaux: 0,
     nombreChambresParNiveau: [0],
     classeTypeE: ClasseTypeE(
